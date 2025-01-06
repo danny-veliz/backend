@@ -2,6 +2,15 @@
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
   <head>
+    <title> 
+
+      {% block title %} 
+
+      Windmill Dashboard
+   
+      {% endblock %} 
+
+</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Windmill Dashboard</title>
@@ -34,7 +43,8 @@
     <!-- Local script files -->
 
   </head>
-  <body>
+  <body  class="bg-gray-100 font-family-karla flex">
+    
     <div
       class="flex h-screen bg-gray-50 dark:bg-gray-900"
       :class="{ 'overflow-hidden': isSideMenuOpen }"
@@ -583,7 +593,7 @@
       </aside>
       
 
-      <!-- START - Block content -->
+      <!-- START - Block content 
 
         <div class="flex items-center justify-center h-screen bg-gray-100 w-full">
             <div class="p-6 bg-white shadow-md rounded">
@@ -591,8 +601,15 @@
             </div>
         </div>
 
-        <!-- END - Block content -->
+        END - Block content -->
 
     </div>
+    <!-- START - Block content -->
+    {% block content %}
+
+    <div> ... </div>
+
+    {% endblock %}
+    <!-- END - Block content -->
   </body>
 </html>
