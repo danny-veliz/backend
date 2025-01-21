@@ -1,3 +1,4 @@
+{% load static %}
 <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
     <div
         class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
@@ -199,10 +200,10 @@
                             <!-- START - Block Logout -->
 
                             <!-- Método post y action para el URL (con el alias 'logout') -->
-                            <form class="w-full">
+                            <form method="post" action="{% url 'logout' %}" class="w-full">
 
                                 <!-- CSRF token -->
-                                
+                                {% csrf_token %}
                                 <button
                                     class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200">
                                     <svg
