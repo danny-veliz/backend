@@ -16,9 +16,10 @@ from pathlib import Path
 import firebase_admin
 from firebase_admin import credentials
 
+BASE_DIR= Path(__file__).resolve().parent.parent
 
 # Coloque la ruta relativa al archivo con la clave privada
-FIREBASE_CRED = credentials.Certificate("keys/landing-key.json")
+FIREBASE_CRED = credentials.Certificate(BASE_DIR / "keys/landing-key.json")
 
 # Inicialice la conexión con el Realtime Database con la clave privada y la URL de referencia
 firebase_admin.initialize_app(FIREBASE_CRED, {
